@@ -23,7 +23,7 @@ for i in range(len(tuple)):
  ```
  What did we do here? Well basically we did the same thing in an array only thing is we change the array to a tuple.
  
- #Looping through a dictionary
+ # Looping through a dictionary
  I will show you two examples, first one is dealing with `sub keys`
  ```py
  dictionary = {
@@ -67,3 +67,29 @@ for tkey in dictionary:
     print(f"Key, {tkey}")
     print(f"Value, {dictionary[tkey]}")
 ```
+
+# Looping through a list of dictionaries
+In javascript it took me quite some time figuring this out but here is how you loop through a list of dictionaries, ofc 2 examples, one with and one without sub keys
+```py
+my_list = [{"key": "value"}]
+
+for my_dict in my_list:
+    for key, value in my_dict.items():
+        print(f"Key: {key}")
+        print(f"Value: {value}")
+```
+
+what did we do here? Well first off this is a dictionary list without sub keys, we first defined it in `my_list` then iterate over it with `for my_dict in my_list` then we make another for loop in it like `for key, value in my_dict.items()`, `.items()` method is used with dictionaries to return a view object containing key-value pairs. This method allows you to iterate over the key-value pairs of a dictionary.
+Here is an example with sub keys
+```py
+my_list = [{"key1": {"sub_key1": "sub_value1", "sub_key2": "sub_value2"}},           {"key2": {"sub_key3": "sub_value3", "sub_key4": "sub_value4"}}]
+
+for my_dict in my_list:
+    for key, sub_dict in my_dict.items():
+        print(f"Key: {key}")
+        for sub_key, sub_value in sub_dict.items():
+            print(f"Sub Key: {sub_key}")
+            print(f"Sub Value: {sub_value}")
+```
+
+We basically do everything above, only this time the code creates a list with one dictionary that has one key-value pair. It then goes through the list and uses the .items() method to get each key-value pair from the dictionary. It then prints the key and value of each pair.
