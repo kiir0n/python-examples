@@ -2,12 +2,13 @@
 What is a while loop? Well a while loop is a loop in Python that will execute a block of code **as long as** the statement is true. Here is an example:
 
 
-<code><pre>
+```py
 name = input("Type in your name\n")
 while not name:
     name = input("Type in your name\n")
 
-print("Hey there "+name)</code></pre>
+print("Hey there "+name)
+```
 
 
 What did we just do?
